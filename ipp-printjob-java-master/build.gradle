@@ -1,0 +1,22 @@
+plugins {
+    id "java-library"
+    id "org.sonarqube" version "3.0"
+}
+
+repositories {
+    jcenter()
+}
+
+defaultTasks("clean", "build")
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_9
+    targetCompatibility = JavaVersion.VERSION_1_9
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'ipp.IppPrinter'
+    }
+    archivesBaseName = 'printjob'
+}

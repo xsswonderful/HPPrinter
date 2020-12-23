@@ -73,7 +73,7 @@ class IppPrinter {
     new FileInputStream(file).transferTo(dataOutputStream); // Java >= 9
 
     // check http response
-    if (httpUrlConnection.getResponseCode() != 200) {  //返回200即发送成功，401发送失败
+    if (httpUrlConnection.getResponseCode() != 200) {
       System.out.println(httpUrlConnection.getResponseMessage());
       System.err.println(new String(httpUrlConnection.getErrorStream().readAllBytes()));
       throw new IOException(String.format("post to %s failed with http status %d", uri, httpUrlConnection.getResponseCode()));
